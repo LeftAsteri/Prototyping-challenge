@@ -72,14 +72,43 @@ class _MyHomePageState extends State<MyHomePage> {
   final int color2 = 0xFFB3001B;
   final int color1 = 0xFF020202;
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(color1),
-      appBar: AppBar(title: const Text('Scouting App')),
+      appBar: AppBar(
+        title: const Text('Scouting App'),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero, // Remove default padding
+            children: <Widget>[
+              const DrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(color: Colors.white, fontSize: 24),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
+                onTap: () {
+                  // Handle tap for Home
+                  Navigator.pop(context); // Close the drawer
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text('Settings'),
+                onTap: () {
+                  // Handle tap for Settings
+                  Navigator.pop(context); // Close the drawer
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color2: color2,
                   onPressed: () {
                     setState(() {
-                      if(ovenScore > 0){
+                      if (ovenScore > 0) {
                         ovenScore--;
                       }
                     });
@@ -113,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color2: color2,
                   onPressed: () {
                     setState(() {
-                      if(ovenMiss > 0){
+                      if (ovenMiss > 0) {
                         ovenMiss--;
                       }
                     });
@@ -137,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color2: color2,
                   onPressed: () {
                     setState(() {
-                      if(trayScore > 0){
+                      if (trayScore > 0) {
                         trayScore--;
                       }
                     });
@@ -156,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$trayMiss',
                   onPressed: () {
                     setState(() {
-                      if(trayMiss > 0){
+                      if (trayMiss > 0) {
                         trayMiss--;
                       }
                     });
@@ -180,7 +209,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color2: color2,
                   onPressed: () {
                     setState(() {
-                      if(hatchScore > 0){
+                      if (hatchScore > 0) {
                         hatchScore--;
                       }
                     });
@@ -199,7 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color2: color2,
                   onPressed: () {
                     setState(() {
-                      if(hatchMiss > 0){
+                      if (hatchMiss > 0) {
                         hatchMiss--;
                       }
                     });
@@ -221,26 +250,31 @@ class _MyHomePageState extends State<MyHomePage> {
           context: context,
           builder: (BuildContext context) => AlertDialog(
             title: const Text('Are you sure?'),
-            content: const Text('This will clear the current values and send the data to the WebHook'),
+            content: const Text(
+              'This will clear the current values and send the data to the WebHook',
+            ),
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
                 child: const Text('Cancel'),
               ),
-              TextButton(onPressed: () {
-                Navigator.pop(context, 'OK');
-                sendWebhook(
-                  '**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**\nOven Score: $ovenScore\nOven Miss: $ovenMiss\nTray Score: $trayScore\nTray Miss: $trayMiss\nHatch Score: $hatchScore\nHatch Miss: $hatchMiss\n**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**',
-                );
-                setState(() {
-                  ovenScore = 0;
-                  ovenMiss = 0;
-                  trayScore = 0;
-                  trayMiss = 0;
-                  hatchScore = 0;
-                  hatchMiss = 0;
-                });
-              }, child: const Text('OK')),
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context, 'OK');
+                  sendWebhook(
+                    '**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**\nOven Score: $ovenScore\nOven Miss: $ovenMiss\nTray Score: $trayScore\nTray Miss: $trayMiss\nHatch Score: $hatchScore\nHatch Miss: $hatchMiss\n**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**',
+                  );
+                  setState(() {
+                    ovenScore = 0;
+                    ovenMiss = 0;
+                    trayScore = 0;
+                    trayMiss = 0;
+                    hatchScore = 0;
+                    hatchMiss = 0;
+                  });
+                },
+                child: const Text('OK'),
+              ),
             ],
           ),
         ),
