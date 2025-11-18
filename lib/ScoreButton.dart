@@ -19,10 +19,10 @@ class ScoreButton extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: 100,
-          height: 25,
+          width: 110,
+          height: 30,
           padding: const EdgeInsets.all(0),
-          margin: const EdgeInsets.all(30),
+          margin: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: Colors.yellow,
             borderRadius: BorderRadius.circular(15),
@@ -32,12 +32,16 @@ class ScoreButton extends StatelessWidget {
           ),
           child: Text(title,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black,
-            ),),
+              style: TextStyle(
+
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+          ),
         ),
         Container(
-          width: 180,
+          width: 205,
           height: 75,
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.all(30),
@@ -54,7 +58,6 @@ class ScoreButton extends StatelessWidget {
                 onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  // Background color
                   foregroundColor: Colors.yellow,
 
                   textStyle: TextStyle(
@@ -65,7 +68,7 @@ class ScoreButton extends StatelessWidget {
                 child: Text('-'),
               ),
               Container(
-                width: 25,
+                width: 50,
                 height: 25,
                 padding: const EdgeInsets.all(3),
                 margin: const EdgeInsets.all(4),
@@ -79,9 +82,12 @@ class ScoreButton extends StatelessWidget {
                 child: Text(displayScore,
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
                     color: Colors.yellow,
 
-                  ),),
+                  ),
+                ),
               ),
               ElevatedButton(
                 onPressed: onPressed2,

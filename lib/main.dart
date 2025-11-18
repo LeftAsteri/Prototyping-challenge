@@ -67,8 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int hatchMiss = 0;
 
   //------------------------
-  double xDistance = 8;
-  double yDistance = 16;
+  final double xDistance = 8;
+  final double yDistance = 16;
 
   @override
   Widget build(BuildContext context) {
