@@ -7,12 +7,10 @@ void main() {
   runApp(const MyApp());
 }
 
-
-
 Future<void> sendWebhook(String content) async {
   final String webhookUrl =
       'https://discordapp.com/api/webhooks/1440119165116747806/kcTs3ji_UpM-IqfDV3I9tx5H9DJBTJrUyIyxpe5PYUjrpZ_Z1CaOnCyvkSR-ESISks_A';
-  
+
   Map<String, dynamic> discordMessage = {
     'content': content,
     'username': 'Flutter App',
@@ -62,22 +60,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Scounting App')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FloatingActionButton(
-              onPressed: () {
-                sendWebhook('**{}{}{}{}{}{}{}{}{}{}**\n'
-                    '');
-
-              },
-
-              child: Text('Done'),
-            ),
-          ],
+          children: [],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          sendWebhook('**{}{}{}{}{}{}{}{}{}{}**\nMeow');
+        },
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
     );
   }
 }
