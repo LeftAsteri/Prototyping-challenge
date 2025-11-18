@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ScoreButton extends StatelessWidget {
+  final String title;
   final String displayScore;
   final VoidCallback onPressed;
   final VoidCallback onPressed2;
 
   const ScoreButton({
     Key? key,
+    required this.title,
     required this.displayScore,
     required this.onPressed,
     required this.onPressed2,
@@ -14,12 +16,15 @@ class ScoreButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ElevatedButton(onPressed: onPressed, child: Text('-')),
-        Text(displayScore),
-        ElevatedButton(onPressed: onPressed2, child: Text('+')),
-      ],
+    return Column(
+        children: [Text(title),
+    Row(
+    children: [
+    ElevatedButton(onPressed: onPressed, child: Text('-')),
+    Text(displayScore),
+    ElevatedButton(onPressed: onPressed2, child: Text('+')),
+    ],
+    );],
     );
   }
 }

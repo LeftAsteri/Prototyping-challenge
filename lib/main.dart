@@ -78,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ScoreButton(
+                  title: 'Oven Score',
                   displayScore: '$ovenScore',
                   onPressed: () {
                     setState(() {
@@ -91,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 ),
                 ScoreButton(
+                  title: 'Oven Score',
                   displayScore: '$ovenMiss',
                   onPressed: () {
                     setState(() {
@@ -112,8 +114,8 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(
-            title: const Text('AlertDialog Title'),
-            content: const Text('AlertDialog description'),
+            title: const Text('Are you sure?'),
+            content: const Text('This will clear the current values and send the data to the WebHook'),
             actions: <Widget>[
               TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
