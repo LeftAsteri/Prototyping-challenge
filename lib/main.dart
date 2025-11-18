@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$ovenScore',
                   onPressed: () {
                     setState(() {
-                      if(ovenScore >= 0){
+                      if(ovenScore > 0){
                         ovenScore--;
                       }
                     });
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$ovenMiss',
                   onPressed: () {
                     setState(() {
-                      if(ovenMiss >= 0){
+                      if(ovenMiss > 0){
                         ovenMiss--;
                       }
                     });
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$trayScore',
                   onPressed: () {
                     setState(() {
-                      if(trayScore >= 0){
+                      if(trayScore > 0){
                         trayScore--;
                       }
                     });
@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$trayMiss',
                   onPressed: () {
                     setState(() {
-                      if(trayMiss >= 0){
+                      if(trayMiss > 0){
                         trayMiss--;
                       }
                     });
@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$hatchScore',
                   onPressed: () {
                     setState(() {
-                      if(hatchScore >= 0){
+                      if(hatchScore > 0){
                         hatchScore--;
                       }
                     });
@@ -177,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$hatchMiss',
                   onPressed: () {
                     setState(() {
-                      if(hatchMiss >= 0){
+                      if(hatchMiss > 0){
                         hatchMiss--;
                       }
                     });
