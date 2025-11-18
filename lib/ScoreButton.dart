@@ -18,7 +18,24 @@ class ScoreButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(title),
+        Container(
+          width: 100,
+          height: 25,
+          padding: const EdgeInsets.all(0),
+          margin: const EdgeInsets.all(30),
+          decoration: BoxDecoration(
+            color: Colors.yellow,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: const [
+
+            ],
+          ),
+          child: Text(title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+            ),),
+        ),
         Container(
           width: 180,
           height: 75,
@@ -28,11 +45,7 @@ class ScoreButton extends StatelessWidget {
             color: Colors.yellow,
             borderRadius: BorderRadius.circular(15),
             boxShadow: const [
-              BoxShadow(
-                color: Colors.black26,
-                blurRadius: 10,
-                offset: Offset(5, 5),
-              ),
+
             ],
           ),
           child: Row(
@@ -57,17 +70,18 @@ class ScoreButton extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 margin: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(0),
                   boxShadow: const [
-                    BoxShadow(
-                      color: Colors.black26,
-                      blurRadius: 10,
-                      offset: Offset(5, 5),
-                    ),
+
                   ],
                 ),
-                child: Text(displayScore),
+                child: Text(displayScore,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.yellow,
+
+                  ),),
               ),
               ElevatedButton(
                 onPressed: onPressed2,
