@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                Text('|\t|'),
+                SizedBox(width: 16.0),
                 ScoreButton(
                   title: 'Oven Miss',
                   displayScore: '$ovenMiss',
@@ -108,6 +108,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            SizedBox(height: 32.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ScoreButton(
+                  title: 'Oven Score',
+                  displayScore: '$ovenScore',
+                  onPressed: () {
+                    setState(() {
+                      ovenScore--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenScore++;
+                    });
+                  },
+                ),
+                SizedBox(width: 16.0),
+                ScoreButton(
+                  title: 'Oven Miss',
+                  displayScore: '$ovenMiss',
+                  onPressed: () {
+                    setState(() {
+                      ovenMiss--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenMiss++;
+                    });
+                  },
+                ),
+              ],
+            ),
+            SizedBox(height: 32.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ScoreButton(
+                  title: 'Oven Score',
+                  displayScore: '$ovenScore',
+                  onPressed: () {
+                    setState(() {
+                      ovenScore--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenScore++;
+                    });
+                  },
+                ),
+                SizedBox(width: 16.0),
+                ScoreButton(
+                  title: 'Oven Miss',
+                  displayScore: '$ovenMiss',
+                  onPressed: () {
+                    setState(() {
+                      ovenMiss--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenMiss++;
+                    });
+                  },
+                ),
+              ],
+            ),
+            SizedBox(height: 32.0),
           ],
         ),
       ),
