@@ -3,13 +3,19 @@ import 'package:flutter/material.dart';
 class ScoreButton extends StatelessWidget {
   final String title;
   final String displayScore;
+  final int color1;
+  final int color2;
   final VoidCallback onPressed;
   final VoidCallback onPressed2;
+
+
 
   const ScoreButton({
     Key? key,
     required this.title,
     required this.displayScore,
+    required this.color1,
+    required this.color2,
     required this.onPressed,
     required this.onPressed2,
   }) : super(key: key);
@@ -24,7 +30,7 @@ class ScoreButton extends StatelessWidget {
           padding: const EdgeInsets.all(0),
           margin: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: Color(color2),
             borderRadius: BorderRadius.circular(15),
             boxShadow: const [
 
@@ -36,7 +42,7 @@ class ScoreButton extends StatelessWidget {
 
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Color(color1),
               ),
           ),
         ),
@@ -46,7 +52,7 @@ class ScoreButton extends StatelessWidget {
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: Color(color2),
             borderRadius: BorderRadius.circular(15),
             boxShadow: const [
 
@@ -57,8 +63,8 @@ class ScoreButton extends StatelessWidget {
               ElevatedButton(
                 onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.yellow,
+                  backgroundColor: Color(color1),
+                  foregroundColor: Color(color2),
 
                   textStyle: TextStyle(
                     fontSize: 18,
@@ -73,7 +79,7 @@ class ScoreButton extends StatelessWidget {
                 padding: const EdgeInsets.all(3),
                 margin: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Color(color1),
                   borderRadius: BorderRadius.circular(0),
                   boxShadow: const [
 
@@ -84,7 +90,7 @@ class ScoreButton extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
-                    color: Colors.yellow,
+                    color: Color(color2),
 
                   ),
                 ),
@@ -92,9 +98,9 @@ class ScoreButton extends StatelessWidget {
               ElevatedButton(
                 onPressed: onPressed2,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Color(color1),
                   // Background color
-                  foregroundColor: Colors.yellow,
+                  foregroundColor: Color(color2),
                   // Text/icon color
 
 

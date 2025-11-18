@@ -69,11 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
   //------------------------
   final double xDistance = 8;
   final double yDistance = 16;
+  final int color2 = 0xFFB3001B;
+  final int color1 = 0xFF020202;
+
+
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(color1),
       appBar: AppBar(title: const Text('Scouting App')),
       body: Center(
         child: Column(
@@ -85,6 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScoreButton(
                   title: 'Oven Score',
                   displayScore: '$ovenScore',
+                  color1: color1,
+                  color2: color2,
                   onPressed: () {
                     setState(() {
                       if(ovenScore > 0){
@@ -102,6 +109,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScoreButton(
                   title: 'Oven Miss',
                   displayScore: '$ovenMiss',
+                  color1: color1,
+                  color2: color2,
                   onPressed: () {
                     setState(() {
                       if(ovenMiss > 0){
@@ -124,6 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScoreButton(
                   title: 'Tray Score',
                   displayScore: '$trayScore',
+                  color1: color1,
+                  color2: color2,
                   onPressed: () {
                     setState(() {
                       if(trayScore > 0){
@@ -140,6 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(width: xDistance),
                 ScoreButton(
                   title: 'Tray Miss',
+                  color1: color1,
+                  color2: color2,
                   displayScore: '$trayMiss',
                   onPressed: () {
                     setState(() {
@@ -163,6 +176,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScoreButton(
                   title: 'Hatch Score',
                   displayScore: '$hatchScore',
+                  color1: color1,
+                  color2: color2,
                   onPressed: () {
                     setState(() {
                       if(hatchScore > 0){
@@ -180,6 +195,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScoreButton(
                   title: 'Hatch Miss',
                   displayScore: '$hatchMiss',
+                  color1: color1,
+                  color2: color2,
                   onPressed: () {
                     setState(() {
                       if(hatchMiss > 0){
