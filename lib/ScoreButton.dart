@@ -24,7 +24,8 @@ class ScoreButton extends StatelessWidget {
     Text(displayScore),
     ElevatedButton(onPressed: onPressed2, child: Text('+')),
     ],
-    );],
+    )
+        ],
     );
   }
 }
