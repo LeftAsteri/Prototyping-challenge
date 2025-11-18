@@ -82,7 +82,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$ovenScore',
                   onPressed: () {
                     setState(() {
-                      ovenScore--;
+                      if(ovenScore >= 0){
+                        ovenScore--;
+                      }
                     });
                   },
                   onPressed2: () {
@@ -97,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$ovenMiss',
                   onPressed: () {
                     setState(() {
-                      ovenMiss--;
+                      if(ovenMiss >= 0){
+                        ovenMiss--;
+                      }
                     });
                   },
                   onPressed2: () {
@@ -117,7 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$trayScore',
                   onPressed: () {
                     setState(() {
-                      trayScore--;
+                      if(trayScore >= 0){
+                        trayScore--;
+                      }
                     });
                   },
                   onPressed2: () {
@@ -132,7 +138,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$trayMiss',
                   onPressed: () {
                     setState(() {
-                      trayMiss--;
+                      if(trayMiss >= 0){
+                        trayMiss--;
+                      }
                     });
                   },
                   onPressed2: () {
@@ -152,7 +160,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$hatchScore',
                   onPressed: () {
                     setState(() {
-                      hatchScore--;
+                      if(hatchScore >= 0){
+                        hatchScore--;
+                      }
                     });
                   },
                   onPressed2: () {
@@ -167,7 +177,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   displayScore: '$hatchMiss',
                   onPressed: () {
                     setState(() {
-                      hatchMiss--;
+                      if(hatchMiss >= 0){
+                        hatchMiss--;
+                      }
                     });
                   },
                   onPressed2: () {
