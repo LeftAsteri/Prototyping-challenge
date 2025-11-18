@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                SizedBox(width: 16.0),
+                SizedBox(width: 32.0),
                 ScoreButton(
                   title: 'Oven Miss',
                   displayScore: '$ovenMiss',
@@ -108,77 +108,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: 64.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ScoreButton(
-                  title: 'Oven Score',
-                  displayScore: '$ovenScore',
+                  title: 'Tray Score',
+                  displayScore: '$trayScore',
                   onPressed: () {
                     setState(() {
-                      ovenScore--;
+                      trayScore--;
                     });
                   },
                   onPressed2: () {
                     setState(() {
-                      ovenScore++;
+                      trayScore++;
                     });
                   },
                 ),
-                SizedBox(width: 16.0),
+                SizedBox(width: 32.0),
                 ScoreButton(
-                  title: 'Oven Miss',
-                  displayScore: '$ovenMiss',
+                  title: 'Tray Miss',
+                  displayScore: '$trayMiss',
                   onPressed: () {
                     setState(() {
-                      ovenMiss--;
+                      trayMiss--;
                     });
                   },
                   onPressed2: () {
                     setState(() {
-                      ovenMiss++;
+                      trayMiss++;
                     });
                   },
                 ),
               ],
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: 64.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ScoreButton(
-                  title: 'Oven Score',
-                  displayScore: '$ovenScore',
+                  title: 'Hatch Score',
+                  displayScore: '$hatchScore',
                   onPressed: () {
                     setState(() {
-                      ovenScore--;
+                      hatchScore--;
                     });
                   },
                   onPressed2: () {
                     setState(() {
-                      ovenScore++;
+                      hatchScore++;
                     });
                   },
                 ),
-                SizedBox(width: 16.0),
+                SizedBox(width: 32.0),
                 ScoreButton(
-                  title: 'Oven Miss',
-                  displayScore: '$ovenMiss',
+                  title: 'Hatch Miss',
+                  displayScore: '$hatchMiss',
                   onPressed: () {
                     setState(() {
-                      ovenMiss--;
+                      hatchMiss--;
                     });
                   },
                   onPressed2: () {
                     setState(() {
-                      ovenMiss++;
+                      hatchMiss++;
                     });
                   },
                 ),
               ],
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: 64.0),
           ],
         ),
       ),
