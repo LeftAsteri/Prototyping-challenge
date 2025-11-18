@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'ScoreButton.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -57,6 +59,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int ovenScore = 0;
+  int ovenMiss = 0;
+  int trayScore = 0;
+  int trayMiss = 0;
+  int hatchScore = 0;
+  int hatchMiss = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,13 +73,69 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ScoreButton(
+                  displayScore: '$ovenScore',
+                  onPressed: () {
+                    setState(() {
+                      ovenScore--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenScore++;
+                    });
+                  },
+                ),
+                ScoreButton(
+                  displayScore: '$ovenMiss',
+                  onPressed: () {
+                    setState(() {
+                      ovenMiss--;
+                    });
+                  },
+                  onPressed2: () {
+                    setState(() {
+                      ovenMiss++;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          sendWebhook('**{}{}{}{}{}{}{}{}{}{}**\nMeow');
-        },
+        onPressed: () => showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            title: const Text('AlertDialog Title'),
+            content: const Text('AlertDialog description'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () => Navigator.pop(context, 'Cancel'),
+                child: const Text('Cancel'),
+              ),
+              TextButton(onPressed: () {
+                Navigator.pop(context, 'OK');
+                sendWebhook(
+                  '**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**\nOven Score: $ovenScore\nOven Miss: $ovenMiss\nTray Score: $trayScore\nTray Miss: $trayMiss\nHatch Score: $hatchScore\nHatch Miss: $hatchMiss\n**\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--\\--**',
+                );
+                setState(() {
+                  ovenScore = 0;
+                  ovenMiss = 0;
+                  trayScore = 0;
+                  trayMiss = 0;
+                  hatchScore = 0;
+                  hatchMiss = 0;
+                });
+              }, child: const Text('OK')),
+            ],
+          ),
+        ),
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
