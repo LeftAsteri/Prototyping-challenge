@@ -91,8 +91,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
+                Text('|\t|'),
                 ScoreButton(
-                  title: 'Oven Score',
+                  title: 'Oven Miss',
                   displayScore: '$ovenMiss',
                   onPressed: () {
                     setState(() {
