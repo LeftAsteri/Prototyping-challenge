@@ -66,6 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int hatchScore = 0;
   int hatchMiss = 0;
 
+  //------------------------
+  double xDistance = 8;
+  double yDistance = 16;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                SizedBox(width: 32.0),
+                SizedBox(width: xDistance),
                 ScoreButton(
                   title: 'Oven Miss',
                   displayScore: '$ovenMiss',
@@ -112,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 64.0),
+            SizedBox(height: yDistance),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -132,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                SizedBox(width: 32.0),
+                SizedBox(width: xDistance),
                 ScoreButton(
                   title: 'Tray Miss',
                   displayScore: '$trayMiss',
@@ -151,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 64.0),
+            SizedBox(height: yDistance),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -171,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                SizedBox(width: 32.0),
+                SizedBox(width: xDistance),
                 ScoreButton(
                   title: 'Hatch Miss',
                   displayScore: '$hatchMiss',
@@ -190,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 64.0),
+            SizedBox(height: yDistance),
           ],
         ),
       ),
@@ -222,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        child: const Icon(Icons.add),
+        child: const Text('Done?'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
     );
