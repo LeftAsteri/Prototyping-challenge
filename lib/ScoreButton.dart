@@ -20,12 +20,12 @@ class ScoreButton extends StatelessWidget {
       children: [
         Text(title),
         Container(
-          width: 175,
+          width: 180,
           height: 75,
           padding: const EdgeInsets.all(15),
           margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
-            color: Colors.blueAccent,
+            color: Colors.yellow,
             borderRadius: BorderRadius.circular(15),
             boxShadow: const [
               BoxShadow(
@@ -37,12 +37,25 @@ class ScoreButton extends StatelessWidget {
           ),
           child: Row(
             children: [
-              ElevatedButton(onPressed: onPressed, child: Text('-')),
+              ElevatedButton(
+                onPressed: onPressed,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  // Background color
+                  foregroundColor: Colors.yellow,
+
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                child: Text('-'),
+              ),
               Container(
                 width: 25,
                 height: 25,
-                padding: const EdgeInsets.all(2),
-                margin: const EdgeInsets.all(2),
+                padding: const EdgeInsets.all(3),
+                margin: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(0),
@@ -56,7 +69,22 @@ class ScoreButton extends StatelessWidget {
                 ),
                 child: Text(displayScore),
               ),
-              ElevatedButton(onPressed: onPressed2, child: Text('+')),
+              ElevatedButton(
+                onPressed: onPressed2,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  // Background color
+                  foregroundColor: Colors.yellow,
+                  // Text/icon color
+
+
+                  textStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                child: Text('+'),
+              ),
             ],
           ),
         ),
